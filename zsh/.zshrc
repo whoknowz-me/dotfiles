@@ -1,6 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -19,14 +17,6 @@ alias update="sudo dnf update"
 alias myip="ip -o -4 addr show | awk '{print \$2\":- \"\$4}' | grep -Ev '^(br-|lo)'"
 alias cat="bat"
 alias fzf="fzf --preview 'bat --style=numbers --color=always'"
-
-# EXPORTS
-export PATH=$PATH:/opt/metasploit-framework/bin:~/.local/bin:~/.cargo/bin
-# export XDG_RUNTIME_DIR=/run/user/$(id -u)
-export WORDCHARS="${WORDCHARS//\/}" # Remove / from wordchars
-export BAT_THEME="base16"
-export EDITOR='nvim'
-export MANPAGER="bat -plman"
 
 # DOCKER CONTAINERS
 
@@ -47,6 +37,14 @@ alias blackarch="sudo docker exec -it -u varun -w /home/varun blackarch zsh"
 # ---- Eza (better ls) -----
 alias ls="eza --icons=always"
 alias lls="eza -lhg"
+
+# EXPORTS
+export PATH=$PATH:/opt/metasploit-framework/bin:~/.local/bin:~/.cargo/bin
+# export XDG_RUNTIME_DIR=/run/user/$(id -u)
+export WORDCHARS="${WORDCHARS//\/}" # Remove / from wordchars
+export BAT_THEME="base16"
+export EDITOR='nvim'
+export MANPAGER="bat -plman"
 
 # History setup
 HISTFILE=$HOME/.zsh_history
@@ -91,5 +89,3 @@ white='\033[1;97m'
 #		$blue┃ $grn   ┗██┏┛  ██┃  ██┃██┃  ██┃┗██████┏┛██┃ ┗███┃ $blue        ██┃   ███████┓┗█████┏┛██┃  ██┃   $grn┃
 #		$blue┃ $grn    ┗━┛   ┗━┛  ┗━┛┗━┛  ┗━┛ ┗━━━━━┛ ┗━┛  ┗━━┛ $blue        ┗━┛   ┗━━━━━━┛ ┗━━━━┛ ┗━┛  ┗━┛   $grn┃
 #		$blue┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$grn━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛     "
-
-
