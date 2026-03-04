@@ -10,7 +10,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Set up fzf key bindings, fuzzy completion & zoxide
+# Set up fzf & zoxide
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -24,7 +24,7 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always'"
 export PATH=$PATH:/opt/metasploit-framework/bin:~/.local/bin:~/.cargo/bin
 # export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export WORDCHARS="${WORDCHARS//\/}" # Remove / from wordchars
-export BAT_THEME="Solarized (light)"
+export BAT_THEME="base16"
 export EDITOR='nvim'
 export MANPAGER="bat -plman"
 
